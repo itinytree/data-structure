@@ -166,7 +166,7 @@ public class Array<E> {
         }
 
         E ret = data[index];
-        for (int i = index; i < size; i++) {
+        for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1];
         }
         size--;
@@ -206,6 +206,14 @@ public class Array<E> {
         if (-1 != index) {
             remove(index);
         }
+    }
+
+    public E getLast() {
+        return get(size - 1);
+    }
+
+    public E getFirst() {
+        return get(0);
     }
 
     @Override
