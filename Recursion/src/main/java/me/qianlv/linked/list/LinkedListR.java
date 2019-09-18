@@ -1,8 +1,6 @@
 package me.qianlv.linked.list;
 
 import javafx.util.Pair;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
 /**
  * 使用递归的方式创建链表
@@ -11,19 +9,14 @@ import lombok.Data;
  */
 public class LinkedListR<E> {
 
-    @AllArgsConstructor
-    @Data
-    private class Node {
-        private E data;
-        private Node next;
-
-        public Node(E data) {
-            this(data, null);
+    public static void main(String[] args) {
+        LinkedListR<Integer> list = new LinkedListR<>();
+        for (int i = 0; i < 10; i++) {
+            list.addFirst(i);
         }
-
-        @Override
-        public String toString() {
-            return data.toString();
+        System.out.println(list);
+        while (!list.isEmpty()) {
+            System.out.println("removed " + list.removeLast());
         }
     }
 
@@ -285,14 +278,26 @@ public class LinkedListR<E> {
         return res.toString();
     }
 
-    public static void main(String[] args) {
-        LinkedListR<Integer> list = new LinkedListR<>();
-        for (int i = 0; i < 10; i++) {
-            list.addFirst(i);
+    private class Node {
+        private E data;
+        private Node next;
+
+        public Node(E data, Node next) {
+            this.data = data;
+            this.next = next;
         }
 
-        while (!list.isEmpty()) {
-            System.out.println("removed " + list.removeLast());
+        public Node(E data) {
+            this(data, null);
+        }
+
+        public Node() {
+            this(null, null);
+        }
+
+        @Override
+        public String toString() {
+            return data.toString();
         }
     }
 }

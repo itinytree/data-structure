@@ -6,3 +6,4 @@
 |03-Queues|队列|
 |04-LinkedList|链表|
 |05-Recursion|递归|
+|06-Binary-Search-Tree|二叉查找树|
