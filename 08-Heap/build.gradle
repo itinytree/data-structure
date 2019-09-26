@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'me.qianlv'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'me.qianlv:Arrays:1.0-SNAPSHOT'
+}

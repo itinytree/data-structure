@@ -208,6 +208,15 @@ public class Array<E> {
         }
     }
 
+    public void swap(int i, int j) {
+        if (i < 0 || i >= size || j < 0 || j >= size) {
+            throw new IllegalArgumentException("Index is illegal.");
+        }
+        E t = data[j];
+        data[j] = data[i];
+        data[i] = t;
+    }
+
     public E getLast() {
         return get(size - 1);
     }
