@@ -110,6 +110,7 @@ public class LinkedList2<E> {
             if (cur.data.equals(e)) {
                 return true;
             }
+            cur = cur.next;
         }
         return false;
     }

@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'idea'
     id 'maven-publish'
 }
 
@@ -15,4 +16,13 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'me.qianlv:06-Binary-Search-Tree:1.0-SNAPSHOT'
+    compile 'me.qianlv:LinkedList:1.0-SNAPSHOT'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
 }

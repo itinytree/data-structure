@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'maven-publish'
+    id 'idea'
 }
 
 group 'me.qianlv'
@@ -17,4 +19,12 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.8'
     compile group: 'me.qianlv', name: 'Queues', version: '1.0-SNAPSHOT'
     compile group: 'me.qianlv', name: 'Stacks', version: '1.0-SNAPSHOT'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
 }
